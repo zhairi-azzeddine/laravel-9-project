@@ -39,4 +39,4 @@ return new class extends Migration
         });
         Schema::dropIfExists('etudiants');
     }
-};
+};   // POUR EXECUTER LES TABLE SUR MYSQL "php artisan migrate"

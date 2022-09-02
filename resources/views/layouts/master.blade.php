@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
-    <title>Offcanvas navbar template · Bootstrap v5.2</title>
+    <title>Gestion Etudiant @yield('titre')</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/offcanvas-navbar/">
 
@@ -35,7 +35,7 @@
     
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Etudiant Crud</a>
+    <a class="navbar-brand" href="#">Faculté des Lettres et des Sciences Humaines </a>
     <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -72,7 +72,7 @@
 </nav>
 
 
-<main class="container">
+<main class="container-fluid">
 
 
   @yield("contenu")
@@ -120,6 +120,18 @@
           $(".alert-success").slideUp(600);
           });
           });
+
+        
+
+          $("#checkdelete").click(function() {
+    var checked_status = this.checked;
+    if (checked_status == true) {
+       $("#btnDelete").removeAttr("disabled");
+    } else {
+       $("#btnDelete").attr("disabled", "disabled");
+    }
+});
+
       </script>
-  </body>
+     
 </html>

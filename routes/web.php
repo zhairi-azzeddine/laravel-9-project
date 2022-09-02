@@ -19,6 +19,13 @@ Route::get('/', function () {
 })->name("accueilPage");
 
 Route::get('/Etudiant',[EtudiantController::class,"index"])->name("etudiantsPage");
+
 Route::get('/Etudiant/Create',[EtudiantController::class,"create"])->name("etudiant.create");
 Route::post('/Etudiant/Create',[EtudiantController::class,"ajouter"])->name("etudiant.ajouter");
+
 Route::post('/Etudiant/DeleteSelected',[EtudiantController::class,"DeleteSelected"])->name("etudiant.deleteSelected");
+
+Route::put('/Etudiant/{etudiant}',[EtudiantController::class,"update"])->name("etudiant.update");
+Route::get('/Etudiant/{etudiant}',[EtudiantController::class,"edit"])->name("etudiant.edit");
+
+Route::get('/Etudiant/print/{etudiantPrint}',[EtudiantController::class,"downloadPDF"])->name("etudiant.downloadPDF");
