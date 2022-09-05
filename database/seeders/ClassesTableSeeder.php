@@ -34,5 +34,5 @@ class ClassesTableSeeder extends Seeder
 }
 //POUR EXECUTER LES SEEDER 
 
-// => "php artisan db:seed --class=ClassesTableSeede"   to specify a specific seeder class to run individually
+// => "php artisan db:seed --class=ClassesTableSeeder"   to specify a specific seeder class to run individually
 // => "php artisan db:seed"    command runs the Database\Seeders\DatabaseSeeder

@@ -34,14 +34,27 @@
     <input type="text" class="form-control" name="prenom" required>
   </div>
 
+
+  <div class="mb-3">
+    <label for="cni" class="form-label">CNI</label>
+    <input type="text" class="form-control" name="cni" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="codemassar" class="form-label">Code Massar</label>
+    <input type="text" class="form-control" name="codemassar" required>
+  </div>
+
+
   <div class="mb-3">
     <label  for="photo" class="form-label">Photo</label>
     <input type="file" class="form-control" name="photo" required>
   </div>
 
+
   <div class="mb-3">
     <label for="cv" class="form-label">CV</label>
-    <input type="file" class="form-control" name="cv" >
+    <input type="file" class="form-control" name="cv">
   </div>
 
   <div class="mb-3">

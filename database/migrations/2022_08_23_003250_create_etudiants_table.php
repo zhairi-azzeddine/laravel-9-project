@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string("photo");
             $table->string("cv");
             $table->foreignId("classe_id")->constrained("classes");
+            $table->string("cni");
+            $table->string("codemassar");
             $table->timestamps();
         });
 

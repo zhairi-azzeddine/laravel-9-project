@@ -50,7 +50,8 @@ class EtudiantController extends Controller
                 "prenom"=>"required",
                 "photo"=>"required|image|mimes:jpg,png,jpeg,gif,svg|max:2048",
                 "cv"=>"mimes:pdf|max:1000",
-                "classe_id"=>"required"
+                "classe_id"=>"required",
+                "codemassar"=>"required|string|min:10|max:10"
             ]
             );
 
@@ -74,6 +75,8 @@ class EtudiantController extends Controller
         $requestData["cv"]="";
 
         $requestData["classe_id"] = $request->classe_id;
+        $requestData["cni"] = $request->cni;
+        $requestData["codemassar"] = $request->codemassar;
         Etudiant::create($requestData);
 
       

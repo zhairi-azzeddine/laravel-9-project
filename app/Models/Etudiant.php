@@ -13,5 +13,5 @@ class Etudiant extends Model
         return $this->belongsTo(Classe::class);
     }
 
-    protected $fillable = ['nom','prenom','photo','cv','classe_id'];
+    protected $fillable = ['nom','prenom','photo','cv','classe_id','cni','codemassar'];
 }
