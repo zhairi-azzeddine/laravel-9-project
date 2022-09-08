@@ -48,25 +48,43 @@
         <li class="nav-item">
           <a class="nav-link {{ request()->is('Etudiant') ? 'active' : ''}}" href="{{route('etudiantsPage')}}">Etudiant</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Switch account</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Settings</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+       
+      
+
+        @if(auth()->check() and auth()->id())
+        <div class="d-flex justify-content-end">
+      <li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle text-uppercase" href="#" data-bs-toggle="dropdown" aria-expanded="false">{{ auth()->user()->name }}</a>
+<ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="{{ route('profile.show') }}">Profile</a></li>
+      <form method="POST" action="{{ route('logout') }}">
+        @csrf
+      <li><a role="button" onclick="event.preventDefault(); this.closest('form').submit(); " class="dropdown-item" href="{{ route('logout') }}">Deconnextion </a></li>
       </form>
+    </ul>
+      </li>
+      </div>
+
+    @else
+
+    <li class="nav-item">
+    <a class="nav-link" href="{{ url('/register') }}">Inscription</a>
+    </li>
+
+
+    <li class="nav-item">
+    <a class="nav-link" href="{{ url('/login') }}">Login</a>
+    </li>
+
+
+    @endif
+
+
+
+
+
+      </ul>
+     
     </div>
   </div>
 </nav>

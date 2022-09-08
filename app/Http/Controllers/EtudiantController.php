@@ -89,10 +89,11 @@ class EtudiantController extends Controller
 
     public function DeleteSelected(Request $request){
         $ids=$request->ids;
+        File::delete("/storage/image/1662341833Profile.jpg");
     
         Etudiant::whereIn('id',$ids)->delete();
        
-        return back()->with("deleted", "Etudiant ajouté avec Succéé");
+        return back()->with("deleted", "Etudiant supprimer avec Succéé");
     
     }
 
